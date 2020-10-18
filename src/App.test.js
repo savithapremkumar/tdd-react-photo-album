@@ -27,7 +27,7 @@ describe("App Component", () => {
   });
   it("should render the heading div", () => {
     const wrapper = findByTestAttr(component, "appComponent");
-    expect(wrapper.find("div").hasClass("header")).toBe(true);
+    expect(wrapper.find(".header").length).toBe(1);
     expect(wrapper.find(".header").text()).toBe(
       "JSON Placeholder Albums Loader"
     );
