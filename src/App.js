@@ -1,9 +1,11 @@
 import React from "react";
+import Header from "./components/Header";
+import { SiteHeading } from "./constants/messages";
 
 function App() {
   return (
     <div data-test="appComponent" className="App">
-      <div className="header">JSON Placeholder Albums Loader</div>
+      <Header heading={SiteHeading}></Header>
     </div>
   );
 }

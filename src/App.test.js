@@ -32,9 +32,10 @@ describe("App Component", () => {
   it("should render the Heading component with given props", () => {
     const wrapper = findByTestAttr(component, "appComponent");
     expect(wrapper.find(Header).length).toBe(1);
-    expect(wrapper.find(".header").text()).toBe(
+    //console.log(wrapper.debug());
+
+    expect(wrapper.find(Header).dive().text()).toBe(
       "JSON Placeholder Albums Loader"
     );
-    //console.log(enzymeWrapper.debug());
   });
 });
