@@ -1,6 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 import { findByTestAttr } from "./../utils";
+import Header from "./components/Header";
 
 //import { render } from '@testing-library/react';
 import App from "./App";
@@ -16,18 +17,21 @@ const setUp = (props = {}) => {
 };
 
 describe("App Component", () => {
-  let component;
+  let component, props;
   beforeEach(() => {
     component = setUp();
+    props = {
+      heading: "JSON Placeholder Albums Loader",
+    };
   });
 
   it("should render without error", () => {
     const wrapper = findByTestAttr(component, "appComponent");
     expect(wrapper.length).toBe(1);
   });
-  it("should render the heading div", () => {
+  it("should render the Heading component with given props", () => {
     const wrapper = findByTestAttr(component, "appComponent");
-    expect(wrapper.find(".header").length).toBe(1);
+    expect(wrapper.find(Header).length).toBe(1);
     expect(wrapper.find(".header").text()).toBe(
       "JSON Placeholder Albums Loader"
     );
