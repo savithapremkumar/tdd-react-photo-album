@@ -52,4 +52,10 @@ describe("App Component", () => {
       "Fetch Albums!"
     );
   });
+
+  it("should display a list of albums on click of Fetch Albums button", () => {
+    const wrapper = findByTestAttr(component, "appComponent");
+    //console.log(wrapper.debug());
+    expect(wrapper.find("ul.albums").length).toBe(1);
+  });
 });
