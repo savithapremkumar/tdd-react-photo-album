@@ -2,6 +2,7 @@ import React from "react";
 import { shallow } from "enzyme";
 import { findByTestAttr } from "./../utils";
 import Header from "./components/Header";
+import Home from "./views/Home";
 
 //import { render } from '@testing-library/react';
 import App from "./App";
@@ -37,5 +38,15 @@ describe("App Component", () => {
     expect(wrapper.find(Header).dive().text()).toBe(
       "JSON Placeholder Albums Loader"
     );
+  });
+
+  it("should render the Home view with a Fetch Albums button", () => {
+    const wrapper = findByTestAttr(component, "appComponent");
+    expect(wrapper.find(Home).length).toBe(1);
+    //console.log(wrapper.debug());
+
+    expect(
+      wrapper.find(Home).dive().find("button").hasClass("start-button")
+    ).toBe(true);
   });
 });
