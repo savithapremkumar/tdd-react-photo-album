@@ -2,7 +2,11 @@ import React, { Component } from "react";
 
 export class Home extends Component {
   render() {
-    return <div></div>;
+    return (
+      <div>
+        <button className="start-button"></button>
+      </div>
+    );
   }
 }
 
