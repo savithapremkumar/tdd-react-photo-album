@@ -48,5 +48,8 @@ describe("App Component", () => {
     expect(
       wrapper.find(Home).dive().find("button").hasClass("start-button")
     ).toBe(true);
+    expect(wrapper.find(Home).dive().find("button").text()).toBe(
+      "Fetch Albums!"
+    );
   });
 });
