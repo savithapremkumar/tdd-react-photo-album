@@ -21,9 +21,16 @@ describe("App Component", () => {
     component = setUp();
   });
 
-  it("Should render without error", () => {
+  it("should render without error", () => {
     const wrapper = findByTestAttr(component, "appComponent");
-    //console.log('NODE_ENV', process.env.NODE_ENV);
     expect(wrapper.length).toBe(1);
+  });
+  it("should render the heading div", () => {
+    const wrapper = findByTestAttr(component, "appComponent");
+    expect(wrapper.find("div").hasClass("header")).toBe(true);
+    expect(wrapper.find(".header").text()).toBe(
+      "JSON Placeholder Albums Loader"
+    );
+    //console.log(enzymeWrapper.debug());
   });
 });
